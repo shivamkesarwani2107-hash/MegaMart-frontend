@@ -11,6 +11,9 @@ import Help from "./frontend/help";
 import Profile from "./frontend/profile";
 import CategoryProducts from "./frontend/CategoryProducts.js";
 import SubCategoryProducts from "./frontend/SubCategoryProducts.js"
+import Payment from "./frontend/payment";
+import Orders from "./frontend/orders";
+import Wishlist from "./frontend/wishlist";
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +31,9 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/category/:route" element={<CategoryProducts />} />
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
 
     </BrowserRouter>
