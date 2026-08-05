@@ -90,7 +90,7 @@ export default function Header() {
                         onClick={() => navigate("/")}
                         className="hover:text-green-600"
                     >
-                        Home
+                       🏡 Home
                     </button>
 
                     <button
@@ -98,6 +98,20 @@ export default function Header() {
                         className="hover:text-green-600"
                     >
                         ❤️ Wishlist
+                    </button>
+
+                    <button
+                        onClick={() => navigate("/help")}
+                        className="hover:text-green-600"
+                    >
+                        ❓ Help
+                    </button>
+
+                    <button
+                        onClick={() => navigate("/contact")}
+                        className="hover:text-green-600"
+                    >
+                        📞 Contact
                     </button>
 
                     {
@@ -217,6 +231,26 @@ export default function Header() {
                                 className="text-left"
                             >
                                 ❤️ Wishlist
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    navigate("/help");
+                                    setMenuOpen(false);
+                                }}
+                                className="text-left"
+                            >
+                                ❓ Help
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    navigate("/contact");
+                                    setMenuOpen(false);
+                                }}
+                                className="text-left"
+                            >
+                                📞 Contact
                             </button>
 
                             {

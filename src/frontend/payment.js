@@ -112,7 +112,7 @@ export default function Payment() {
 
                             alert("Order Placed Successfully ✅");
 
-                            navigate("/orders");
+                            navigate("/thankyou");
 
                         } else {
 

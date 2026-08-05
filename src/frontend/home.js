@@ -56,6 +56,7 @@ export default function Home() {
                         className="w-full cursor-pointer"
                         src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2160/layout-engine/2026-01/Frame-1437256605-2-2.jpg"
                         alt="banner"
+                        onClick={() => navigate("/category/fruit")}
                     />
 
                 </div>
@@ -193,9 +194,14 @@ export default function Home() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                        <div className="bg-white rounded-2xl p-6 shadow hover:shadow-xl duration-300">
+                        <div
+                            onClick={() => navigate("/delivery")}
+                            className="bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:scale-105 duration-300 cursor-pointer"
+                        >
 
-                            <div className="text-5xl mb-4">
+                            <div
+                                onClick={() => navigate("/delivery")}
+                                className="text-5xl mb-4">
                                 🚚
                             </div>
 
@@ -212,7 +218,10 @@ export default function Home() {
 
                         </div>
 
-                        <div className="bg-white rounded-2xl p-6 shadow hover:shadow-xl duration-300">
+                        <div
+                            onClick={() => navigate("/fresh")}
+                            className="bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:scale-105 duration-300 cursor-pointer"
+                        >
 
                             <div className="text-5xl mb-4">
                                 🥬
@@ -229,7 +238,10 @@ export default function Home() {
 
                         </div>
 
-                        <div className="bg-white rounded-2xl p-6 shadow hover:shadow-xl duration-300">
+                        <div
+                            onClick={() => navigate("/collection")}
+                            className="bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:scale-105 duration-300 cursor-pointer"
+                        >
 
                             <div className="text-5xl mb-4">
                                 🛒
@@ -246,7 +258,10 @@ export default function Home() {
 
                         </div>
 
-                        <div className="bg-white rounded-2xl p-6 shadow hover:shadow-xl duration-300">
+                        <div
+                            onClick={() => navigate("/secure")}
+                            className="bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:scale-105 duration-300 cursor-pointer"
+                        >
 
                             <div className="text-5xl mb-4">
                                 🔒

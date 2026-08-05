@@ -14,13 +14,19 @@ import SubCategoryProducts from "./frontend/SubCategoryProducts.js"
 import Payment from "./frontend/payment";
 import Orders from "./frontend/orders";
 import Wishlist from "./frontend/wishlist";
+import ProtectedRoute from "./frontend/ProtectedRoute";
+import Delivery from "./frontend/delivery";
+import Fresh from "./frontend/fresh";
+import Collection from "./frontend/collection";
+import Secure from "./frontend/secure";
+import Admin from "./frontend/admin";
+import Thankyou from "./frontend/thankyou";
 function App() {
   return (
     <BrowserRouter>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/header" element={<Header />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/contact" element={<Contact />} />
@@ -28,12 +34,51 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Products />} />
         <Route path="/help" element={<Help />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/category/:route" element={<CategoryProducts />} />
         <Route path="/subcategory/:id" element={<SubCategoryProducts />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/fresh" element={<Fresh />} />
+        <Route path="/collection" element={<Collection />} />
+        <Route path="/secure" element={<Secure />} />
+        <Route path="/admin" element={<Admin />} />
+
+        <Route path="/cart" element={
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/profile" element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/payment" element={
+          <ProtectedRoute>
+            <Payment />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/orders" element={
+          <ProtectedRoute>
+            <Orders />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/wishlist" element={
+          <ProtectedRoute>
+            <Wishlist />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/thankyou" element={
+          <ProtectedRoute>
+            <Thankyou />
+          </ProtectedRoute>
+        }
+        />
+
       </Routes>
 
     </BrowserRouter>

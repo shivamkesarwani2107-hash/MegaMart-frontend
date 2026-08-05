@@ -175,7 +175,7 @@ export default function Wishlist() {
 
                                 <button
 
-                                    onClick={() => navigate("/products")}
+                                    onClick={() => navigate("/")}
 
                                     className="mt-8 bg-green-600 text-white px-8 py-3 rounded-xl hover:bg-green-700"
 
