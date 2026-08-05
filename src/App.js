@@ -19,7 +19,6 @@ import Delivery from "./frontend/delivery";
 import Fresh from "./frontend/fresh";
 import Collection from "./frontend/collection";
 import Secure from "./frontend/secure";
-import Admin from "./frontend/admin";
 import Thankyou from "./frontend/thankyou";
 function App() {
   return (
@@ -40,7 +39,6 @@ function App() {
         <Route path="/fresh" element={<Fresh />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/secure" element={<Secure />} />
-        <Route path="/admin" element={<Admin />} />
 
         <Route path="/cart" element={
           <ProtectedRoute>
