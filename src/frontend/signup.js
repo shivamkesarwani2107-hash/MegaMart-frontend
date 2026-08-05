@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 export default function Signup() {
 
     const navigate = useNavigate();
@@ -13,12 +13,12 @@ export default function Signup() {
     const handleSignup = async () => {
 
         if (!name || !email || !password || !confirmPassword) {
-            alert("Please fill all fields");
+            toast.warning("Please fill all fields");
             return;
         }
 
         if (password !== confirmPassword) {
-            alert("Password and Confirm Password do not match");
+            toast.warning("Password and Confirm Password do not match");
             return;
         }
 
@@ -44,7 +44,7 @@ export default function Signup() {
 
             if (data.success) {
 
-                alert(data.message);
+                toast.success(data.message);
 
                 navigate("/login");
 
@@ -52,7 +52,7 @@ export default function Signup() {
 
             else {
 
-                alert(data.message);
+                toast.error(data.message);
 
             }
 
@@ -62,7 +62,7 @@ export default function Signup() {
 
             console.log(error);
 
-            alert("Something went wrong");
+            toast.error("Something went wrong");
 
         }
 

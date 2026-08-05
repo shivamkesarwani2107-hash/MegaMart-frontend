@@ -1,5 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
+import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -121,7 +122,7 @@ export default function Wishlist() {
 
         );
 
-        alert("Moved To Cart");
+        toast.success("Moved To Cart");
 
         getWishlist();
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 export default function Login() {
 
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ export default function Login() {
     const handleLogin = async () => {
 
         if (!email || !password) {
-            alert("Please fill all fields");
+            toast.warning("Please fill all fields");
             return;
         }
 
@@ -39,7 +39,7 @@ export default function Login() {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("user", JSON.stringify(data.user));
 
-                alert(data.message);
+                toast.success(data.message);
 
                 navigate("/");
 
@@ -47,7 +47,7 @@ export default function Login() {
 
             else {
 
-                alert(data.message);
+                toast.error(data.message);
 
             }
 
@@ -57,7 +57,7 @@ export default function Login() {
 
             console.log(error);
 
-            alert("Something went wrong");
+            toast.error("Something went wrong");
 
         }
 

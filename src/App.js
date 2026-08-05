@@ -20,6 +20,8 @@ import Fresh from "./frontend/fresh";
 import Collection from "./frontend/collection";
 import Secure from "./frontend/secure";
 import Thankyou from "./frontend/thankyou";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <BrowserRouter>
@@ -78,6 +80,16 @@ function App() {
         />
 
       </Routes>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
 
     </BrowserRouter>
   );

@@ -1,5 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
+import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Cart() {
@@ -112,7 +113,7 @@ export default function Cart() {
 
             else {
 
-                alert(data.message);
+                toast.success(data.message);
 
             }
 
@@ -166,7 +167,7 @@ export default function Cart() {
 
             else {
 
-                alert(data.message);
+                toast.error(data.message);
 
             }
 

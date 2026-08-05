@@ -190,7 +190,23 @@ export default function Home() {
 
                     </div>
 
-                    {/* Features */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+
+                        <img
+                            src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_400/rng/md/carousel/production/71dc092b19b3f0e24133a1c50caa00c6"
+                            alt="Banner 1"
+                            className="w-full h-40 sm:h-48 md:h-52 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            onClick={() => navigate("/subcategory/6a6e4ec22a3072060cc08c7f")}
+                        />
+
+                        <img
+                            src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_640/MERCHANDISING_BANNERS/IMAGES/MERCH/2026/6/2/c2321949-4bfa-40e6-a599-468fdcc49e57_1863.png"
+                            alt="Banner 2"
+                            className="w-full h-40 sm:h-48 md:h-52 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            onClick={() => navigate("/category/drink")}
+                        />
+
+                    </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 

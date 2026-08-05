@@ -1,5 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
+import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
@@ -47,7 +48,7 @@ export default function SubCategoryProducts() {
 
         if (!user) {
 
-            alert("Please Login First");
+            toast.warning("Please Login First");
 
             navigate("/login");
 
@@ -148,7 +149,7 @@ export default function SubCategoryProducts() {
 
         if (!user) {
 
-            alert("Please Login First");
+            toast.warning("Please Login First");
 
             navigate("/login");
 
@@ -174,7 +175,7 @@ export default function SubCategoryProducts() {
 
             const data = await response.json();
 
-            alert(data.message);
+            toast.error(data.message);
 
         } catch (error) {
 

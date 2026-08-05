@@ -1,5 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
+import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
@@ -69,7 +70,7 @@ export default function Products() {
 
         if (!user) {
 
-            alert("Please Login First");
+            toast.warning("Please Login First");
             navigate("/login");
             return;
 
@@ -107,19 +108,19 @@ export default function Products() {
 
             if (!response.ok) {
 
-                alert(data.message);
+                toast.success(data.message);
                 return;
 
             }
 
             await getWishlist();
             await getCart();
-            alert("Product Added Successfully");
+            toast.success("Product Added Successfully");
 
         } catch (error) {
 
             console.log(error);
-            alert("Something Went Wrong");
+            toast.error("Something Went Wrong");
 
         }
 
@@ -151,7 +152,7 @@ export default function Products() {
 
         if (!user) {
 
-            alert("Please Login First");
+            toast.warning("Please Login First");
             navigate("/login");
             return;
 

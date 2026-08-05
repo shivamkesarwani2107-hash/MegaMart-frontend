@@ -1,5 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
+import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Payment() {
@@ -52,7 +53,7 @@ export default function Payment() {
 
             if (!data.success) {
 
-                alert("Order Create Failed");
+                toast.error("Order Create Failed");
                 return;
 
             }
@@ -110,13 +111,13 @@ export default function Payment() {
 
                         if (orderData.success) {
 
-                            alert("Order Placed Successfully ✅");
+                            toast.success("Order Placed Successfully ✅");
 
                             navigate("/thankyou");
 
                         } else {
 
-                            alert(orderData.message);
+                            toast.error(orderData.message); 
 
                         }
 
@@ -124,7 +125,7 @@ export default function Payment() {
 
                         console.log(error);
 
-                        alert("Order Save Failed");
+                        toast.error("Order Save Failed");
 
                     }
 
