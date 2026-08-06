@@ -211,12 +211,12 @@ export default function Home() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                         <div
-                            onClick={() => navigate("/delivery")}
+                            onClick={() => navigate("/deliveryInformation")}
                             className="bg-white rounded-2xl p-6 shadow hover:shadow-xl hover:scale-105 duration-300 cursor-pointer"
                         >
 
                             <div
-                                onClick={() => navigate("/delivery")}
+                                
                                 className="text-5xl mb-4">
                                 🚚
                             </div>

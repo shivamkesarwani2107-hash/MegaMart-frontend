@@ -11,22 +11,31 @@ export default function Products() {
     const [products, setProducts] = useState([]);
     const [cartMap, setCartMap] = useState({});
     const [wishlist, setWishlist] = useState([]);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+
     useEffect(() => {
         getProducts();
+    }, [page]);
+
+    useEffect(() => {
+
         getCart();
+
         getWishlist();
+
     }, []);
 
     const getProducts = async () => {
 
         try {
 
-            const response = await fetch("http://localhost:4000/product");
+            const response = await fetch(`http://localhost:4000/product?page=${page}&limit=20`);
 
             const data = await response.json();
 
             setProducts(data.data);
-
+            setTotalPages(data.totalPages);
         } catch (error) {
 
             console.log(error);
@@ -108,7 +117,7 @@ export default function Products() {
 
             if (!response.ok) {
 
-                toast.success(data.message);
+                toast.error(data.message);
                 return;
 
             }
@@ -345,6 +354,44 @@ export default function Products() {
                     }
 
                 </div>
+
+            </div>
+
+            <div className="flex justify-center items-center gap-5 mt-10">
+
+                <button
+
+                    disabled={page === 1}
+
+                    onClick={() => setPage(page - 1)}
+
+                    className="bg-green-600 text-white px-5 py-2 rounded disabled:bg-gray-300"
+
+                >
+
+                    Previous
+
+                </button>
+
+                <span className="font-bold">
+
+                    {page} / {totalPages}
+
+                </span>
+
+                <button
+
+                    disabled={page === totalPages}
+
+                    onClick={() => setPage(page + 1)}
+
+                    className="bg-green-600 text-white px-5 py-2 rounded disabled:bg-gray-300"
+
+                >
+
+                    Next
+
+                </button>
 
             </div>
 

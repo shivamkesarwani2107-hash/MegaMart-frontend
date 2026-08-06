@@ -30,6 +30,7 @@ export default function Payment() {
         deliveryFee,
         platformFee,
         total,
+        address
     } = state;
 
     const handlePayment = async () => {
@@ -102,6 +103,8 @@ export default function Payment() {
                                     platformFee,
 
                                     total,
+
+                                    address
 
                                 }),
                             }

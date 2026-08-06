@@ -348,19 +348,27 @@ export default function Cart() {
 
                     <button
                         onClick={() =>
-                            navigate("/payment", {
+                            navigate("/delivery", {
+
                                 state: {
+
                                     cart,
+
                                     subtotal,
+
                                     deliveryFee,
+
                                     platformFee,
-                                    total,
-                                },
+
+                                    total
+
+                                }
+
                             })
                         }
                         className="w-full mt-6 bg-green-600 text-white py-3 rounded-xl hover:bg-green-700"
                     >
-                        Proceed To Checkout
+                        Proceed To Delivery
                     </button>
 
                 </div>

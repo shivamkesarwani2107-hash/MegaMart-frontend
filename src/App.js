@@ -20,6 +20,7 @@ import Fresh from "./frontend/fresh";
 import Collection from "./frontend/collection";
 import Secure from "./frontend/secure";
 import Thankyou from "./frontend/thankyou";
+import DeliveryInformation from "./frontend/deliveryInformation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/fresh" element={<Fresh />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/secure" element={<Secure />} />
+        <Route path="/deliveryInformation" element={<DeliveryInformation />} />
 
         <Route path="/cart" element={
           <ProtectedRoute>
