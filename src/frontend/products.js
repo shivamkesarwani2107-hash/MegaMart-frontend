@@ -92,27 +92,20 @@ export default function Products() {
 
             const response = await fetch(
 
-                "http://localhost:4000/wishlist/add",
+                "http://localhost:4000/cart/add",
 
                 {
-
                     method: "POST",
-
                     headers: {
                         "Content-Type": "application/json",
                     },
-
                     body: JSON.stringify({
-
                         userId: user._id,
                         productId,
-
                     }),
-
                 }
 
             );
-
             const data = await response.json();
 
             if (!response.ok) {
